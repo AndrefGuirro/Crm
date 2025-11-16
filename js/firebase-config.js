@@ -7,6 +7,7 @@ import {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
     sendPasswordResetEmail
+    onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // CONFIG DO FIREBASE
@@ -35,5 +36,7 @@ export {
     signInWithPopup,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
-    sendPasswordResetEmail
+    sendPasswordResetEmail,
+    onAuthStateChanged  
 };
+
