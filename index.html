@@ -8,5 +8,23 @@
 <body>
     <h1>ENTROU
     </h1>
+
+
+                        <!-- Liberar acesso somente se usuário estiver logado -->
+                        <script type="module">
+                        import { auth, onAuthStateChanged } from "./js/firebase-config.js";
+
+                        // Verifica o estado da autenticação
+                        onAuthStateChanged(auth, (user) => {
+                            if (!user) {
+                                // Usuário não está logado → mandar para login
+                                window.location.href = "login.html";
+                            } else {
+                                console.log("Usuário logado:", user.email);
+                            }
+                        });
+
+</script>
+
 </body>
 </html>
