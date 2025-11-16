@@ -80,6 +80,22 @@ btnCriarConta.addEventListener("click", async () => {
     }
 });
 
+// Função para alternar visibilidade da senha---------------
+document.querySelectorAll(".toggle-password").forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const input = document.getElementById(toggle.dataset.target);
+    const esconder = input.type === "password";
+
+    // Alterna entre mostrar e ocultar
+    input.type = esconder ? "text" : "password";
+
+    // Alterna o ícone (olho / olho fechado)
+    toggle.textContent = esconder ? "🙈" : "👁️";
+  });
+});
+
+
+
 // ---------- RECUPERAR SENHA ----------
 btnRecuperar.addEventListener("click", async () => {
     const email = document.getElementById("email-recuperar").value.trim();

@@ -45,7 +45,13 @@
 
     <div id="login-section">
         <input type="email" id="email-login" class="form-control mb-2" placeholder="E-mail" />
-        <input type="password" id="senha-login" class="form-control mb-3" placeholder="Senha" />
+        <input type="password" class="form-control" id="senha-login" placeholder="Senha" required>
+            <!-- BOTÃO OLHO -->
+            <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-50 end-0 translate-middle-y me-2"
+                    onclick="togglePassword('registerPassword', this)">👁️
+            </button>
+           
+
         <button class="btn btn-primary w-100 mb-3" id="btn-login-email">Entrar</button>
 
         <div class="google-btn mb-3" id="btn-google-login">
@@ -62,6 +68,7 @@
     <div id="criar-section" class="d-none">
         <h5 class="mb-3">Criar conta</h5>
         <input type="email" id="email-criar" class="form-control mb-2" placeholder="E-mail" />
+
         <input type="password" id="senha-criar" class="form-control mb-3" placeholder="Senha" />
         <button class="btn btn-success w-100 mb-3" id="btn-criar-conta">Registrar</button>
         <a id="voltar-login1">Voltar</a>
