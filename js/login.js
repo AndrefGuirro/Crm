@@ -4,7 +4,7 @@ import {
     signInWithPopup,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
-    sendPasswordResetEmail
+    sendPasswordResetEmail,
 } from "./firebase-config.js";
 
 
