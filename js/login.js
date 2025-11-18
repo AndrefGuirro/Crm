@@ -80,18 +80,32 @@ btnCriarConta.addEventListener("click", async () => {
     }
 });
 
-// Função para alternar visibilidade da senha---------------
-document.querySelectorAll(".toggle-password").forEach((toggle) => {
-  toggle.addEventListener("click", () => {
-    const input = document.getElementById(toggle.dataset.target);
-    const esconder = input.type === "password";
+// === Mostrar / Ocultar senha - LOGIN ===
+document.getElementById("toggleSenhaLogin").addEventListener("click", () => {
+    const input = document.getElementById("senha-login");
+    const icon = document.querySelector("#toggleSenhaLogin i");
 
-    // Alterna entre mostrar e ocultar
-    input.type = esconder ? "text" : "password";
+    if (input.type === "password") {
+        input.type = "text";
+        icon.classList.replace("bi-eye", "bi-eye-slash");
+    } else {
+        input.type = "password";
+        icon.classList.replace("bi-eye-slash", "bi-eye");
+    }
+});
 
-    // Alterna o ícone (olho / olho fechado)
-    toggle.textContent = esconder ? "🙈" : "👁️";
-  });
+// === Mostrar / Ocultar senha - CRIAR CONTA ===
+document.getElementById("toggleSenhaCriar").addEventListener("click", () => {
+    const input = document.getElementById("senha-criar");
+    const icon = document.querySelector("#toggleSenhaCriar i");
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.classList.replace("bi-eye", "bi-eye-slash");
+    } else {
+        input.type = "password";
+        icon.classList.replace("bi-eye-slash", "bi-eye");
+    }
 });
 
 
