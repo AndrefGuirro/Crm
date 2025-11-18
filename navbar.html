@@ -11,13 +11,41 @@
           <a class="nav-link" href="clientes.html">Clientes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="agenda.html">Agenda</a>
+          <a class="nav-link" href="index.html">Agenda</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://www.cadesp.fazenda.sp.gov.br/(S(s0v14y0a4w2qc1pd5nvuu41i))/Pages/Cadastro/Consultas/ConsultaPublica/ConsultaPublica.aspx">Consulta Sintegra</a>
         </li>
         
-        <button class="btn btn-outline-danger" id="btn-logout">Sair</button>
+         <li class="nav-item">
+          <button class="nav-link text-danger border border-danger rounded px-2 py-1 ms-2"
+            id="btn-logout" style="background: transparent;">
+            Sair
+          </button>
+        </li>
+
+<!-- Botão sair (Logout) funcionalidade -->
+        <script>
+    import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+const auth = getAuth();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btnLogout = document.getElementById("btn-logout");
+
+  if (btnLogout) {
+    btnLogout.addEventListener("click", () => {
+      signOut(auth)
+        .then(() => {
+          window.location.href = "login.html"; // volta para login
+        })
+        .catch((error) => {
+          console.error("Erro ao sair:", error);
+          alert("Erro ao tentar sair.");
+        });
+    });
+  }
+});</script>
     
       </ul>
     </div>

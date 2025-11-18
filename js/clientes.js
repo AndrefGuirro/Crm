@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+  // Carregar a NavBar
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+
+        });
     
     // --- NOVO: Variável para guardar o usuário logado ---
     let currentUser = null; 
@@ -12,8 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             currentUser = user; // Guarda o objeto do usuário (que contém o UID)
             console.log('Usuário logado:', currentUser.uid);
 
-            // Carrega a navbar (seu código original)
-            carregarNavbar();
+           
 
             // Carrega os clientes do usuário logado (modificamos sua função)
             carregarClientes(currentUser.uid);
@@ -25,15 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // --- MODIFICADO: Sua função da Navbar ---
-    // (Coloquei dentro de uma função para ser chamada *depois* do login)
-    function carregarNavbar() {
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            });
-    }
+
 
     // --- REMOVIDO: Seus dados de exemplo ---
     // const mockClients = [ ... ]; // Não precisamos mais disso

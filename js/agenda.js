@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         });
 
+
     // Dados de exemplo para a agenda
     const mockVisits = [
         { id: 1, nome: 'Empresa Exemplo LTDA', fantasia: 'Nome Fantasia Exemplo', endereco: 'Rua das Flores, 123' },
