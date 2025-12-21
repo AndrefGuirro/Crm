@@ -70,8 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- NOVO: Função de Renderização ---
-    // (Eu extraí esta lógica da sua antiga função "renderClients")
-    // Ela agora é reutilizável: serve para carregar e para adicionar um novo.
     function renderizarBlocoCliente(client, docId) {
         // Lógica para mostrar nome (PF) ou Razão Social (PJ)
         const nomePrincipal = client.nome || client.razaoSocial;
@@ -91,10 +89,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- REMOVIDO: A chamada renderClients() antiga ---
-    // renderClients(); // Não precisamos mais chamar aqui
+    // renderClients(); 
 
-    // --- MANTIDO: Sua lógica de alternar formulários  ---
-    // (Este código está 100% igual ao que você me passou)
+    // ---  lógica de alternar formulários  ---
     const btnPf = document.getElementById('btn-pf');
     const btnPj = document.getElementById('btn-pj');
     const formPf = document.getElementById('form-pf');
